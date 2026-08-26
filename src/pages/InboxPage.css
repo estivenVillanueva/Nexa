@@ -364,10 +364,14 @@
     padding: 28px 20px 16px;
   }
 
-  .inbox-chat {
+  .inbox-chat,
+  .inbox-chat.is-open {
     display: flex;
     flex: 1;
     position: static;
+    inset: auto;
+    z-index: auto;
+    min-width: 0;
   }
 
   .inbox-chat__back {

@@ -49,18 +49,9 @@ export function CreatePostPage() {
     <div className="create-page">
       <main className="create-modal">
         <header className="create-modal__header">
+          <h1 className="create-modal__title">Nueva publicación</h1>
           <button type="button" className="create-modal__cancel" onClick={goBack}>
-            <Icon name="close" className="create-modal__cancel-icon" />
-            <span className="create-modal__cancel-text">Cancelar</span>
-          </button>
-          <div className="create-modal__brand">Nexa</div>
-          <button
-            type="button"
-            className="create-modal__publish"
-            onClick={handlePublish}
-            disabled={!text.trim() && !mediaUrl}
-          >
-            Publicar
+            Cancelar
           </button>
         </header>
 
@@ -144,10 +135,12 @@ export function CreatePostPage() {
           </div>
           <button
             type="button"
-            aria-label="Más opciones"
-            className="create-modal__more"
+            className="create-modal__publish"
+            onClick={handlePublish}
+            disabled={!text.trim() && !mediaUrl}
           >
-            <Icon name="more_horiz" />
+            <Icon name="send" size={18} />
+            Publicar
           </button>
           <input
             ref={fileRef}

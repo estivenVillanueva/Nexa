@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feed Principal - Nexa</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf8ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-tint": "#4d44e3",
+                        "on-tertiary-container": "#dadcde",
+                        "tertiary": "#46494b",
+                        "on-primary-container": "#dad7ff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#faf8ff",
+                        "primary-container": "#4f46e5",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#505f76",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary": "#3525cd",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-container": "#eaedff",
+                        "surface-container-high": "#e2e7ff",
+                        "primary-fixed": "#e2dfff",
+                        "on-background": "#131b2e",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#131b2e",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed": "#191c1e",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "outline": "#777587",
+                        "outline-variant": "#c7c4d8",
+                        "inverse-primary": "#c3c0ff",
+                        "tertiary-container": "#5e6163",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#464555",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-secondary-container": "#54647a",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#d0e1fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 md:pl-72 flex flex-col items-center">
+<!-- Desktop Navigation Drawer (Hidden on Mobile) -->
+<nav class="hidden md:flex flex-col p-lg gap-md h-full bg-surface dark:bg-surface text-primary dark:text-inverse-primary font-label-md text-label-md border-r border-outline-variant dark:border-outline fixed left-0 top-0 w-64 lg:w-72 z-40">
+<div class="font-display-lg text-display-lg font-black text-primary mb-xl">Nexa</div>
+<div class="flex items-center gap-md p-md mb-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A close up portrait of a professional individual with a modern, approachable expression, set against a clean, minimalist background reflecting a tech-elegant aesthetic. Lighting is soft and bright, casting subtle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA3d-F5XFcl2LpvPhwCwDxRGUFrh7H8J7eNJ4F92S4PTEUQl6M4qWk9cMXYpJPZ6sSBPMuQojUmHIoqXDA291YbMsJWP_0kPlj8GTN9y8EaypiuEGf6lc6rlyWTI9FICl54unu3rEKrSiiBef9cqm6GJzJPuK_9D3pLWB-RjpQdYvRK-S0YC7IdPQfLqh9vyanTvi9k3fdVH3rfLs5eut8BC5xG45dz100gjDgLBLBRVrpTlBw4Oaz"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Nexa User</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@nexa_user</span>
+</div>
+</div>
+<ul class="flex flex-col gap-sm flex-1">
+<li>
+<a class="flex items-center gap-md px-md py-3 text-primary dark:text-inverse-primary font-bold bg-primary-container/10 rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                    Home
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant dark:text-on-surface-variant rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">search</span>
+                    Explore
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant dark:text-on-surface-variant rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">notifications</span>
+                    Notifications
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant dark:text-on-surface-variant rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">mail</span>
+                    Messages
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant dark:text-on-surface-variant rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">add_box</span>
+                    Create
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant dark:text-on-surface-variant rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">person</span>
+                    Profile
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant dark:text-on-surface-variant rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+</nav>
+<!-- TopAppBar (Mobile) -->
+<header class="bg-surface dark:bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline md:hidden">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-inverse-primary tracking-tight">Nexa</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-2xl px-margin-mobile md:px-0 py-md flex flex-col gap-lg mx-auto relative min-h-screen">
+<!-- Floating Action Button (Mobile Only) -->
+<button class="fixed bottom-24 right-4 md:hidden w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-lg flex items-center justify-center z-40 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">edit</span>
+</button>
+<!-- Post 1: Text Only -->
+<article class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] p-lg hover:shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.1)] transition-shadow">
+<div class="flex items-start gap-md mb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden shrink-0">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Avatar portrait of a young tech professional with short hair, wearing glasses, minimalist tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMmhhH_m6DHihaG6S1UX3zkVmGwsWVZjwbpNy8lp1UHXV9CUu_kJ2yr94ssYS-Q0GsVgOcb2r_3jS54S-jDnmqbK1KgL7Y2LYia7kRwpucbMfqNkugYJ1_UESstbLMDF9aziGSsBp5tnNkEo6gu1S3kNcBzGctxL8L66BL4ducreDjs_fpuckhgyf-ssDKf9TpZvlKavzp3Q9Q8vn0CX5Yo1rE8B3UODzgJa_8rykwrS06hQVkdHl5"/>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Marc Tech</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2h</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@marc_tech</span>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-full p-1"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">Explorando las nuevas fronteras de la IA. El impacto en el desarrollo de software es innegable. 🚀</p>
+<div class="flex items-center gap-xl text-on-surface-variant font-body-sm text-body-sm border-t border-surface-variant pt-sm mt-sm">
+<button class="flex items-center gap-xs hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">chat_bubble</span>
+                    12
+                </button>
+<button class="flex items-center gap-xs hover:text-error transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">favorite</span>
+                    48
+                </button>
+<button class="flex items-center gap-xs hover:text-primary transition-colors group ml-auto">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">share</span>
+</button>
+</div>
+</article>
+<!-- Post 2: Text + Image -->
+<article class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] p-lg hover:shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.1)] transition-shadow">
+<div class="flex items-start gap-md mb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden shrink-0">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Avatar of a female developer in a bright modern office setting, smiling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxS0qFU0n46IjU_2QxuzDuA6NL98QPry-zzsk3zr7MvYKKKCW0_SQUf-UYcQpheMNeDUo3HyINxjeuEiD2Nvfgdfo9aXc2N1P15QMgsD7UP0Dpvg5Fm7fzozyC6e6qlEbEs9wRJRlIsfFbRnEKkfTAVEnrC0u6MUNY2os21Vc089moGjTgNxNZJwhd7FvX0bY21s6XnfPqHjNdx76SO93FP7POwsF0EojOHkDlHvpBfyXTU3maYuTg"/>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Sophie Dev</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4h</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@sophie_dev</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">Mi setup para hoy #coding #minimalism</p>
+<div class="w-full h-64 rounded-lg overflow-hidden mb-md">
+<img alt="Workspace setup" class="w-full h-full object-cover" data-alt="A clean, minimalist tech workspace featuring a modern sleek laptop next to a mechanical keyboard and a warm cup of coffee. Soft, natural sunlight streams in, highlighting the elegant simplicity of the desk setup in a light mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBftgZVN5hq96ejUp9DkfvHiqCq-HtDNJyjikP_QNEFS97L702C0azfahqmOrvTvC6ixGJ5r0iqFEg06VnhOGkLkXS0wo3acpDZ65TwmYL45nAjPGbO3M_uWSh0lcjJZ8cgxd2cf6B2gs-zh_VLhg6W-Zx247FJCdaBrmYzSllZ-rxFpBQPJvomzeRVXtscO-x9eXmwf5x5GVoo23YpilASlkDWoU6AnzcOC3l0zDLJp2-w7RMIYiO"/>
+</div>
+<div class="flex items-center gap-xl text-on-surface-variant font-body-sm text-body-sm border-t border-surface-variant pt-sm mt-sm">
+<button class="flex items-center gap-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                    34
+                </button>
+<button class="flex items-center gap-xs text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    128
+                </button>
+<button class="flex items-center gap-xs hover:text-primary transition-colors ml-auto">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</article>
+<!-- Post 3: Text + Carousel -->
+<article class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] p-lg hover:shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.1)] transition-shadow">
+<div class="flex items-start gap-md mb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden shrink-0">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Avatar of an urban photographer, creative casual style, bright outdoor lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoPbpV_IFITVRWCrVz3K5Xgm5cK_xKXvn_2XyWBm9QIgIXGy1oJBpd0qchWStFOgZnVTRZzM3OAsvyRiVLY_7UxYEugn4sH56Px3TDZRS_xrIMbpC31-MkEj4srxHjhizO3znFBdRKSVyFRDyfBjpNU8t-Ysb710EhucXI7ANkxaKO4vAFEWMMlI9nHUO69EjOkzkW6_phnIwV0_BDXmvbhODO67BpBNnaCXOYoIQbNhKa9LzAXCVU"/>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Alex Pixels</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">6h</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@alex_pixels</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">Capturando la simetría de la ciudad al amanecer. 🏙️✨</p>
+<!-- Carousel Container -->
+<div class="flex gap-sm overflow-x-auto pb-2 snap-x snap-mandatory hide-scrollbar mb-md">
+<div class="snap-center shrink-0 w-[85%] sm:w-2/3 h-56 rounded-lg overflow-hidden first:ml-0 last:mr-0">
+<img alt="Urban architecture" class="w-full h-full object-cover" data-alt="A stunning urban photography shot capturing precise architectural symmetry in a modern metropolis during sunrise. The soft, diffuse morning light creates a clean, elegant aesthetic with crisp lines and subtle pastel hues reflecting off glass facades." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRh4F0GkOYXWlMxUrSt-uX0uB8ilFCLZDxA9MR4UzAeyDbDK0saismzcCBC_Kk4lVTU8N325NOwKGfJZQ_9zxdvuQyJySfD6KFkcIyTlyfbAuWe5qSt0lJE3BGSofe4iEafHXO_MPbV6tErhmvHerSife9gWhpWpBdzo4d3WVZHa_rx2B8EwrHmU9GQXVTLmtAt92dBMwLLnzSZ8puEfanY32japtqXPFuEsPwADqYN1a9ib6bKyI3"/>
+</div>
+<div class="snap-center shrink-0 w-[85%] sm:w-2/3 h-56 rounded-lg overflow-hidden">
+<img alt="Urban plaza shadows" class="w-full h-full object-cover" data-alt="A secondary urban photograph showing a minimalist concrete plaza with striking geometric shadows cast by early morning sunlight. The composition is highly structured, emphasizing negative space and modern design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT4QqgUN5F77K6RLNiETEnOEI6X1sBpdFTZf_T7ptYlolGUzfHHJwmZbp2pPmiaLeR0r1HbklNv-aDNNfSPbMgh7ysJySlZYA3f-XY2E1QnljkJa0z7yVVm6k57msNY4CExZBoSPQaVCPZifsndoNT_Umc6pB2M4-v2Y4FF7W9CEFkk53HFclGGxhC35q_84WSU4DzS5Qme43UMV7ux4xSmVMA5c-Lm9t7WU1SasdK8ZQm-tj-vtcu"/>
+</div>
+</div>
+<div class="flex items-center gap-xl text-on-surface-variant font-body-sm text-body-sm border-t border-surface-variant pt-sm mt-sm">
+<button class="flex items-center gap-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                    15
+                </button>
+<button class="flex items-center gap-xs hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+                    89
+                </button>
+<button class="flex items-center gap-xs hover:text-primary transition-colors ml-auto">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</article>
+<!-- End of Feed Indicator -->
+<div class="flex justify-center py-lg text-on-surface-variant font-body-sm text-body-sm">
+<p>Estás al día.</p>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface dark:bg-surface font-label-sm text-label-sm fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t border-outline-variant shadow-[0px_-1px_3px_rgba(0,0,0,0.05)] rounded-t-xl pb-[env(safe-area-inset-bottom,16px)]">
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-bold hover:text-primary dark:hover:text-inverse-primary scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors relative" href="#">
+<div class="absolute -top-3 w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-lg transform -translate-y-2">
+<span class="material-symbols-outlined text-[28px]">add_circle</span>
+</div>
+<span class="mt-8 opacity-0">Create</span> <!-- Invisible spacer -->
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+<span class="mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="mt-1">Profile</span>
+</a>
+</nav>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

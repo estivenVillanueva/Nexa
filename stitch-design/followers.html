@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexa - Seguidores y Siguiendo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#faf8ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-tint": "#4d44e3",
+                        "on-tertiary-container": "#dadcde",
+                        "tertiary": "#46494b",
+                        "on-primary-container": "#dad7ff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#faf8ff",
+                        "primary-container": "#4f46e5",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#505f76",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary": "#3525cd",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-container": "#eaedff",
+                        "surface-container-high": "#e2e7ff",
+                        "primary-fixed": "#e2dfff",
+                        "on-background": "#131b2e",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#131b2e",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed": "#191c1e",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "outline": "#777587",
+                        "outline-variant": "#c7c4d8",
+                        "inverse-primary": "#c3c0ff",
+                        "tertiary-container": "#5e6163",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#464555",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-secondary-container": "#54647a",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#d0e1fb"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1280px",
+                        lg: "24px",
+                        xs: "4px",
+                        gutter: "24px",
+                        unit: "4px",
+                        "margin-mobile": "16px",
+                        sm: "8px",
+                        md: "16px",
+                        xl: "32px",
+                        xxl: "48px"
+                    },
+                    fontFamily: {
+                        "display-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- Navigation Drawer (Desktop) -->
+<nav class="hidden md:flex flex-col p-lg gap-md h-full fixed left-0 top-0 w-64 md:w-72 bg-surface dark:bg-surface border-r border-outline-variant dark:border-outline z-50">
+<div class="font-display-lg text-display-lg font-black text-primary mb-xl px-4">Nexa</div>
+<div class="flex items-center gap-3 px-4 mb-xl">
+<img alt="User Profile Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-surface-container-high" data-alt="A professional headshot of a person with a warm smile, wearing smart casual attire, against a soft, well-lit studio background. The lighting highlights their features naturally. High-end corporate portrait style. Deep blues and whites in the palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTkNjUjXS43ZojVQJn_KVp2dQ9ba38BGodqe1v1-fIsZ-WtnlYvKhYR085sNFnZIkdGiwEy1OlAUkZ-6ENuLj99saRrj6JNS4KI8AHJgInQMmdDsJx9cxekQJ0CoVwqUkrDEZX90AlGE1dxSAuv8HMsgp_LZZ6zN5dbJKbFKtmPVK1gxNbQ3-EQOtn6ZpG2xQkWO_vYsq48cYYP1UMHfFipx0ieahV8OfcZezEhtN948DoDGOZevT0"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Nexa User</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">@nexa_user</div>
+</div>
+</div>
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">home</span>
+                    Home
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">search</span>
+                    Explore
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">notifications</span>
+                    Notifications
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">mail</span>
+                    Messages
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">add_box</span>
+                    Create
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-primary dark:text-inverse-primary font-bold bg-primary-container/10 rounded-xl hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+                    Profile
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Top App Bar (Mobile) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile mx-auto h-16 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50">
+<button class="text-primary dark:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-inverse-primary">Nexa</h1>
+<button class="text-primary dark:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto md:ml-64 lg:ml-72 flex flex-col pb-24 md:pb-0">
+<!-- Header & Tabs -->
+<div class="sticky top-0 md:top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant px-margin-mobile md:px-gutter pt-xl pb-0 flex flex-col gap-md">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Elena R.</h2>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full max-w-md mx-auto md:mx-0">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-[#F1F5F9] border border-[#E2E8F0] rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-md text-body-md text-on-surface placeholder-on-surface-variant" placeholder="Search users..." type="text"/>
+</div>
+<!-- Tabs -->
+<div class="flex w-full">
+<button class="flex-1 py-4 font-label-md text-label-md text-primary border-b-2 border-primary font-bold text-center hover:bg-primary/5 transition-colors">
+                    Seguidores (1.2k)
+                </button>
+<button class="flex-1 py-4 font-label-md text-label-md text-on-surface-variant border-b-2 border-transparent font-medium text-center hover:bg-surface-container-low transition-colors">
+                    Siguiendo (854)
+                </button>
+</div>
+</div>
+<!-- List Content -->
+<div class="flex flex-col px-margin-mobile md:px-gutter py-md max-w-3xl mx-auto w-full">
+<!-- User Card 1 (Seguir) -->
+<div class="flex items-center justify-between py-4 border-b border-outline-variant/50 hover:bg-[#F1F5F9]/50 transition-colors rounded-xl px-2 -mx-2">
+<div class="flex items-center gap-4 cursor-pointer">
+<img alt="Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="Close up portrait of a creative professional in a modern office environment, wearing stylish glasses and looking directly at the camera. The aesthetic is clean, bright, and contemporary. Colors feature subtle grays and warm skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhWZzlCrQqvNqzsZkaLxQw_cZLyqfsYDENU4AKZ9RYO456YcgiyDgF68F92VsyuUbPE7YK94vRMBlgDN7WvSvMpDZXdDQ_y0MM9cCrSluwop808iMQUYtA6FvXKAvbCDTWnVkami-wNYLJbB9EZbQQbl2h9HYv65PikWh80ofN6-R0lBnhCGaLYpdq7xCAHasM2ezFLofCheet8J5vrhDj7iTPqUvgIec8KU6_8HnEawU1S7oJJ9UJ"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">David Chen</span>
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@dchen_design</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-1">UI/UX Designer | Coffee enthusiast ☕</p>
+</div>
+</div>
+<button class="px-5 py-2 bg-primary text-on-primary font-label-md text-label-md rounded-full hover:bg-primary-fixed-variant transition-colors shadow-sm">
+                    Seguir
+                </button>
+</div>
+<!-- User Card 2 (Siguiendo) -->
+<div class="flex items-center justify-between py-4 border-b border-outline-variant/50 hover:bg-[#F1F5F9]/50 transition-colors rounded-xl px-2 -mx-2">
+<div class="flex items-center gap-4 cursor-pointer">
+<img alt="Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a young woman with curly hair, outdoors in a city park setting during golden hour. The sunlight creates a warm glow around her. She wears a casual, stylish outfit. Minimalist and bright aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsjqf-yK6CFKNmglhV0lLslDK5QOzY-p9gRHFIkV_WMTIJCj5BaCwmZnDlMM3P2-miq5dZ2PzwFVfs8HWHC-8okgSBBh8CKKL4RZUlZL-hdnZX0O282d_4jl4Gqn_KwUf6AUm22aRs1PpeW1BUwuDWCH8UuQjmiFmvA3GxHdT_eCj7D0IZQAsWPyWO9gMxzMe7xTZc9BXGZVdY4A1QpUevkeAREo5tpZnFwo2xQczIETUgXaFv11Zj"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sarah Jenkins</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@sjenkins</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-1">Digital marketing &amp; content creation.</p>
+</div>
+</div>
+<button class="px-5 py-2 bg-surface text-on-surface border border-outline-variant font-label-md text-label-md rounded-full hover:bg-surface-container-low transition-colors">
+                    Siguiendo
+                </button>
+</div>
+<!-- User Card 3 (Pendiente) -->
+<div class="flex items-center justify-between py-4 border-b border-outline-variant/50 hover:bg-[#F1F5F9]/50 transition-colors rounded-xl px-2 -mx-2">
+<div class="flex items-center gap-4 cursor-pointer">
+<img alt="Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="A candid photo of a man in his 30s at a cafe, working on a laptop. He has a slight beard and wears a dark blue shirt. The background is slightly blurred with soft lighting. High quality lifestyle photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANsmSe9bIetbb6GNx3ER485_fdkWPk49e4rZUHko5nZxi7Ovgj2pOS9tZ0WpE3LGHsKSKOOXYrg5WCiRSl3rTqnXx_pebJbG5PAJ95xihPjF7JKb9NlHyHKrSwP7j88jvb7G1w27TMJYaKThRaAopzvL2LVFt65lSZyk28F44QfuueIKMECqGiA2tyNd46-g3LtNDquAcj6IPHodor0fGKAecdSVYbTpEHCwQkQHSwwOdNeDuuOMfK"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Alex Rivera</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@arivera_tech</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-1">Software Engineer building cool things.</p>
+</div>
+</div>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant border border-outline-variant/50 font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors">
+                    Pendiente
+                </button>
+</div>
+<!-- User Card 4 (Siguiendo) -->
+<div class="flex items-center justify-between py-4 border-b border-outline-variant/50 hover:bg-[#F1F5F9]/50 transition-colors rounded-xl px-2 -mx-2">
+<div class="flex items-center gap-4 cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-primary font-headline-md font-bold">
+                        M
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Tech Magazine</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@techmag_official</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-1">Latest news in technology and startups.</p>
+</div>
+</div>
+<button class="px-5 py-2 bg-surface text-on-surface border border-outline-variant font-label-md text-label-md rounded-full hover:bg-surface-container-low transition-colors">
+                    Siguiendo
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-surface border-t border-outline-variant shadow-[0px_-1px_3px_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-sm text-label-sm mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-bold hover:text-primary dark:hover:text-inverse-primary transition-colors py-1 scale-110 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

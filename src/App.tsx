@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { CreatePostPage } from './pages/CreatePostPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { FeedPage } from './pages/FeedPage'
+import { FollowersPage } from './pages/FollowersPage'
 import { LoginPage } from './pages/LoginPage'
 import { NotificationsPage } from './pages/NotificationsPage'
 import { PlaceholderPage } from './pages/PlaceholderPage'
@@ -20,11 +21,8 @@ export default function App() {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/create" element={<CreatePostPage />} />
         <Route path="/notifications" element={<NotificationsPage />} />
+        <Route path="/followers" element={<FollowersPage />} />
         <Route path="/inbox" element={<PlaceholderPage title="Mensajes" />} />
-        <Route
-          path="/followers"
-          element={<PlaceholderPage title="Seguidores y Siguiendo" />}
-        />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>

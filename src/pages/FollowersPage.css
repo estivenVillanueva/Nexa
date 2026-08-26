@@ -1,0 +1,322 @@
+.followers-page {
+  min-height: 100dvh;
+  background: var(--background);
+  color: var(--on-background);
+  padding-bottom: 96px;
+}
+
+.followers-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.followers-topbar h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.followers-topbar button {
+  padding: 8px;
+  color: var(--primary);
+  border-radius: 9999px;
+  display: flex;
+}
+
+.followers-topbar button:hover {
+  background: var(--surface-low);
+}
+
+.followers-main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.followers-sticky {
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  background: color-mix(in srgb, var(--surface) 95%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--outline-variant);
+  padding: 32px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.followers-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.followers-back {
+  display: flex;
+  padding: 8px;
+  border-radius: 9999px;
+  color: var(--on-surface);
+}
+
+.followers-back:hover {
+  background: var(--surface-low);
+}
+
+.followers-title h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+}
+
+.followers-search {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.followers-search__icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--on-surface-variant);
+  pointer-events: none;
+}
+
+.followers-search input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 9999px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--on-surface);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.followers-search input::placeholder {
+  color: var(--on-surface-variant);
+}
+
+.followers-search input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(53, 37, 205, 0.2);
+}
+
+.followers-tabs {
+  display: flex;
+  width: 100%;
+}
+
+.followers-tabs button {
+  flex: 1;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--on-surface-variant);
+  border-bottom: 2px solid transparent;
+  text-align: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.followers-tabs button:hover {
+  background: var(--surface-low);
+}
+
+.followers-tabs button.is-active {
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom-color: var(--primary);
+}
+
+.followers-tabs button.is-active:hover {
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.followers-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 48rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.followers-empty {
+  margin: 0;
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--on-surface-variant);
+}
+
+.followers-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--outline-variant) 50%, transparent);
+  border-radius: var(--radius-xl);
+  margin: 0 -8px;
+  transition: background 0.15s;
+}
+
+.followers-card:hover {
+  background: color-mix(in srgb, var(--input-bg) 50%, transparent);
+}
+
+.followers-card__user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.followers-card__user img,
+.followers-card__initials {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.followers-card__initials {
+  background: var(--primary-container);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.followers-card__user > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.followers-card__name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--on-surface);
+}
+
+.followers-card__name .material-symbols-outlined {
+  color: var(--primary);
+}
+
+.followers-card__handle,
+.followers-card__user p {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--on-surface-variant);
+  margin: 0;
+}
+
+.followers-card__user p {
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.followers-card__action {
+  flex-shrink: 0;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.followers-card__action--follow {
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: var(--shadow-1);
+}
+
+.followers-card__action--follow:hover {
+  background: #3323cc;
+}
+
+.followers-card__action--following {
+  background: var(--surface);
+  color: var(--on-surface);
+  border: 1px solid var(--outline-variant);
+}
+
+.followers-card__action--following:hover {
+  background: var(--surface-low);
+}
+
+.followers-card__action--pending {
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  border: 1px solid color-mix(in srgb, var(--outline-variant) 50%, transparent);
+}
+
+.followers-card__action--pending:hover {
+  background: var(--surface-high);
+}
+
+@media (min-width: 768px) {
+  .followers-page {
+    padding-left: 16rem;
+    padding-bottom: 0;
+  }
+
+  .followers-topbar {
+    display: none;
+  }
+
+  .followers-sticky {
+    top: 0;
+    padding: 32px 24px 0;
+  }
+
+  .followers-back {
+    display: none;
+  }
+
+  .followers-search {
+    margin: 0;
+  }
+
+  .followers-list {
+    padding: 16px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .followers-page {
+    padding-left: 18rem;
+  }
+}

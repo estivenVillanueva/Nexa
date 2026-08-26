@@ -79,7 +79,7 @@ export function ProfilePage() {
                   <strong>{profile.followers}</strong>
                   <span>Seguidores</span>
                 </Link>
-                <Link to="/followers">
+                <Link to="/followers?tab=following">
                   <strong>{profile.following}</strong>
                   <span>Siguiendo</span>
                 </Link>

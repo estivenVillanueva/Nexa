@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BottomNav } from '../components/BottomNav'
 import { Icon } from '../components/Icon'
+import { NexaLogo } from '../components/NexaLogo'
 import { SideNav } from '../components/SideNav'
 import { profile, profilePosts } from '../data/profile'
 import './ProfilePage.css'
@@ -20,7 +21,7 @@ export function ProfilePage() {
           <button type="button" aria-label="Buscar">
             <Icon name="search" size={24} />
           </button>
-          <span className="profile-topbar__mobile">Nexa</span>
+          <NexaLogo size="sm" className="profile-topbar__mobile" />
           <span className="profile-topbar__desktop">Profile</span>
           <Link to="/settings" aria-label="Ajustes" className="profile-topbar__link">
             <Icon name="settings" size={24} />

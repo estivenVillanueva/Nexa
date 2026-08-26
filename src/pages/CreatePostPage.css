@@ -28,6 +28,20 @@
   flex-shrink: 0;
 }
 
+.create-modal__heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.create-modal__heading .nexa-logo__mark-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
 .create-modal__title {
   margin: 0;
   font-size: 18px;

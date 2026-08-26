@@ -1,6 +1,7 @@
 import { useRef, useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
+import { NexaLogo } from '../components/NexaLogo'
 import './CreatePostPage.css'
 
 const AVATAR =
@@ -49,7 +50,10 @@ export function CreatePostPage() {
     <div className="create-page">
       <main className="create-modal">
         <header className="create-modal__header">
-          <h1 className="create-modal__title">Nueva publicación</h1>
+          <div className="create-modal__heading">
+            <NexaLogo size="sm" showWordmark={false} />
+            <h1 className="create-modal__title">Nueva publicación</h1>
+          </div>
           <button type="button" className="create-modal__cancel" onClick={goBack}>
             Cancelar
           </button>

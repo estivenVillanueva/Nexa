@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BottomNav } from '../components/BottomNav'
 import { Icon } from '../components/Icon'
+import { NexaLogo } from '../components/NexaLogo'
 import { PostCard } from '../components/PostCard'
 import { SideNav } from '../components/SideNav'
 import { posts } from '../data/posts'
@@ -15,7 +16,7 @@ export function FeedPage() {
         <button type="button" aria-label="Buscar">
           <Icon name="search" size={24} />
         </button>
-        <h1>Nexa</h1>
+        <NexaLogo size="sm" className="feed-topbar__logo" />
         <Link to="/settings" aria-label="Ajustes" className="feed-topbar__link">
           <Icon name="settings" size={24} />
         </Link>

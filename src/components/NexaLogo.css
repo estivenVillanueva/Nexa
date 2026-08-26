@@ -1,0 +1,69 @@
+.nexa-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nexa-logo__mark-wrap {
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+  line-height: 0;
+  border-radius: 22%;
+  box-shadow: var(--shadow-primary);
+}
+
+.nexa-logo__mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nexa-logo__word {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.nexa-logo--sm .nexa-logo__mark-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.nexa-logo--sm .nexa-logo__word {
+  font-size: 22px;
+}
+
+.nexa-logo--md .nexa-logo__mark-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+
+.nexa-logo--md .nexa-logo__word {
+  font-size: 28px;
+}
+
+.nexa-logo--lg {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nexa-logo--lg .nexa-logo__mark-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+}
+
+.nexa-logo--lg .nexa-logo__word {
+  font-size: 36px;
+}
+
+@media (min-width: 768px) {
+  .nexa-logo--lg .nexa-logo__word {
+    font-size: 48px;
+  }
+}

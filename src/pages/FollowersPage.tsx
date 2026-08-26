@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { BottomNav } from '../components/BottomNav'
 import { Icon } from '../components/Icon'
+import { NexaLogo } from '../components/NexaLogo'
 import { SideNav } from '../components/SideNav'
 import { followUsers, type FollowStatus } from '../data/followers'
 import './FollowersPage.css'
@@ -54,7 +55,7 @@ export function FollowersPage() {
         <button type="button" aria-label="Buscar">
           <Icon name="search" size={24} />
         </button>
-        <h1>Nexa</h1>
+        <NexaLogo size="sm" className="followers-topbar__logo" />
         <Link to="/settings" aria-label="Ajustes">
           <Icon name="settings" size={24} />
         </Link>

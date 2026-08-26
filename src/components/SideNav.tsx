@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { Icon } from './Icon'
+import { NexaLogo } from './NexaLogo'
 import './SideNav.css'
 
 const AVATAR =
@@ -18,7 +19,9 @@ const NAV = [
 export function SideNav() {
   return (
     <aside className="side-nav">
-      <div className="side-nav__brand">Nexa</div>
+      <Link to="/feed" className="side-nav__brand" aria-label="Nexa">
+        <NexaLogo size="sm" />
+      </Link>
       <Link to="/profile" className="side-nav__user">
         <img src={AVATAR} alt="" />
         <div>

@@ -27,9 +27,18 @@
 }
 
 .profile-topbar__mobile {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  display: inline-flex;
+}
+
+.profile-topbar__mobile .nexa-logo__word {
+  font-size: 24px;
+}
+
+.profile-topbar__mobile .nexa-logo__mark-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  box-shadow: none;
 }
 
 .profile-topbar__desktop {

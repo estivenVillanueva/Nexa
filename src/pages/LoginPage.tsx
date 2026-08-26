@@ -1,10 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { GoogleLogo } from '../components/GoogleLogo'
 import { Icon } from '../components/Icon'
+import { NexaLogo } from '../components/NexaLogo'
 import './LoginPage.css'
-
-const GOOGLE_LOGO =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAohnYywHwhDPesDLMetsNarc4bznkBMsjSpe11T2gH-kPS6tLYivk7dPZ9FDakC9u55Vp62ZBpaEQEen7R0yApemtq_Od7p3KCsgEq0ZOFhe26VegUB7WSNZ5WG6LTiCsJ3zUABsqUJZhz-oRWVTvxzwycnNwH2WeVKtFvea4BCdEe37fauuNBoZBVBDgyMpVCaUz7JpZwsJcU2D4vymRQ2NLlRaytgCE_FSSz1F_sGmagqOs-bF0s'
 
 export function LoginPage() {
   const navigate = useNavigate()
@@ -22,10 +21,7 @@ export function LoginPage() {
       <main className="login-page__main">
         <div className="login-card">
           <div className="login-card__brand">
-            <div className="login-card__logo">
-              <Icon name="hub" size={36} />
-            </div>
-            <h1>Nexa</h1>
+            <NexaLogo size="lg" showWordmark={false} />
           </div>
 
           <div className="login-card__intro">
@@ -96,7 +92,7 @@ export function LoginPage() {
             className="btn-google"
             onClick={() => navigate('/feed')}
           >
-            <img src={GOOGLE_LOGO} alt="" width={20} height={20} />
+            <GoogleLogo size={24} className="btn-google__logo" />
             Continuar con Google
           </button>
 

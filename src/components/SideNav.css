@@ -19,13 +19,11 @@
     color: var(--primary);
   }
 
-  .side-nav__brand {
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 32px;
-  }
+.side-nav__brand {
+  display: inline-flex;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
 
   .side-nav__user {
     display: flex;

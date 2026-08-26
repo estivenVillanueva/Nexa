@@ -21,13 +21,15 @@
   border-bottom: 1px solid var(--outline-variant);
 }
 
-.feed-topbar h1 {
-  margin: 0;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--primary);
+.feed-topbar__logo .nexa-logo__word {
+  font-size: 24px;
+}
+
+.feed-topbar__logo .nexa-logo__mark-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  box-shadow: none;
 }
 
 .feed-topbar button,

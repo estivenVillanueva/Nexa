@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
+import { NexaLogo } from '../components/NexaLogo'
 import './RegisterPage.css'
 
 export function RegisterPage() {
@@ -29,7 +30,7 @@ export function RegisterPage() {
         <div className="register-card__glow" aria-hidden />
 
         <header className="register-card__header">
-          <h1>Nexa</h1>
+          <NexaLogo size="md" />
           <p>Crea tu cuenta para conectarte.</p>
         </header>
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BottomNav } from '../components/BottomNav'
 import { Icon } from '../components/Icon'
+import { NexaLogo } from '../components/NexaLogo'
 import { SideNav } from '../components/SideNav'
 import {
   popularPosts,
@@ -23,7 +24,7 @@ export function ExplorePage() {
         <button type="button" aria-label="Buscar">
           <Icon name="search" size={24} />
         </button>
-        <span>Nexa</span>
+        <NexaLogo size="sm" className="explore-topbar__logo" />
         <Link to="/settings" aria-label="Ajustes">
           <Icon name="settings" size={24} />
         </Link>

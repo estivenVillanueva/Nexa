@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexa - Explorar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf8ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-tint": "#4d44e3",
+                        "on-tertiary-container": "#dadcde",
+                        "tertiary": "#46494b",
+                        "on-primary-container": "#dad7ff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#faf8ff",
+                        "primary-container": "#4f46e5",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#505f76",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary": "#3525cd",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-container": "#eaedff",
+                        "surface-container-high": "#e2e7ff",
+                        "primary-fixed": "#e2dfff",
+                        "on-background": "#131b2e",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#131b2e",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed": "#191c1e",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "outline": "#777587",
+                        "outline-variant": "#c7c4d8",
+                        "inverse-primary": "#c3c0ff",
+                        "tertiary-container": "#5e6163",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#464555",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-secondary-container": "#54647a",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#d0e1fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid { column-count: 3; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- Navigation Drawer (Desktop) -->
+<nav class="hidden md:flex flex-col p-lg gap-md h-full fixed left-0 top-0 w-64 md:w-72 bg-surface border-r border-outline-variant z-40">
+<div class="font-display-lg text-display-lg font-black text-primary mb-xl">Nexa</div>
+<div class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-md p-md rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-xl text-primary font-bold bg-primary-container/10" href="#">
+<span class="material-symbols-outlined" data-icon="search" data-weight="fill">search</span>
+<span class="font-label-md text-label-md">Explore</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-md text-label-md">Messages</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span class="font-label-md text-label-md">Create</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto flex items-center gap-md p-md border-t border-outline-variant pt-lg">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small circular profile picture of a professional user in a minimalist tech environment. Soft lighting, high quality, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT4GDl9AEFevYBfc7wzBX1dgWBtKJg4KveUTb57Gm1QBEqznHsjB-G2Y9Ru3GNbtbwPwJP7K2YZO3qXgFP5R-2wE7YxPbKm7aFRoYVE8cdzbtn6-3w22vu9Nn3E0riAbln8JDu8DMGu6xu86gnmC-RL1VY6IaH3Gu4edF8W0GDZ2-BwmE8FQsDKJOh_iiQYTeTWb-Coq92YnBeNkCvPVnNLQSOi3yEuLxvDgx-MlSU6AnD3in7xcOf"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Nexa User</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">@nexa_user</p>
+</div>
+</div>
+</nav>
+<!-- Top App Bar (Mobile) -->
+<header class="md:hidden docked full-width top-0 sticky z-50 bg-surface border-b border-outline-variant h-16 flex justify-between items-center w-full px-margin-mobile">
+<button class="text-on-surface-variant p-2"><span class="material-symbols-outlined">search</span></button>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary">Nexa</span>
+<button class="text-on-surface-variant p-2"><span class="material-symbols-outlined">settings</span></button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[288px] min-h-screen pb-24 md:pb-8 pt-6 md:pt-12 px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full">
+<!-- Big SearchBar -->
+<div class="mb-xl relative max-w-3xl mx-auto">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-surface-container-low border border-outline-variant text-on-surface font-body-lg text-body-lg rounded-full py-4 pl-12 pr-4 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-[0px_1px_3px_rgba(0,0,0,0.05)] placeholder-outline" placeholder="Buscar temas, personas, etiquetas..." type="text"/>
+</div>
+<!-- Tendencias -->
+<section class="mb-xxl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Tendencias</h2>
+<div class="flex flex-wrap gap-sm">
+<span class="px-4 py-2 bg-primary-container/10 text-primary font-label-md text-label-md rounded-full cursor-pointer hover:bg-primary-container/20 transition-colors">#DesignSystem</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant font-label-md text-label-md rounded-full cursor-pointer hover:bg-surface-container transition-colors">#WebDev</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant font-label-md text-label-md rounded-full cursor-pointer hover:bg-surface-container transition-colors">#Nexa</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant font-label-md text-label-md rounded-full cursor-pointer hover:bg-surface-container transition-colors">#UXUI</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant font-label-md text-label-md rounded-full cursor-pointer hover:bg-surface-container transition-colors">#Minimalism</span>
+</div>
+</section>
+<!-- Personas que quizá conozcas -->
+<section class="mb-xxl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Personas que quizá conozcas</h2>
+<div class="flex overflow-x-auto no-scrollbar gap-md pb-4 snap-x">
+<!-- Suggested User Card -->
+<div class="min-w-[200px] flex-shrink-0 bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center shadow-[0px_1px_3px_rgba(0,0,0,0.05)] snap-start hover:-translate-y-1 transition-transform duration-300">
+<img class="w-20 h-20 rounded-full object-cover mb-sm" data-alt="A professional headshot of a female tech designer in a well-lit studio. Modern minimalist aesthetic, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1gKRnhulANHRiwOFpqdaUXMStF8sBVipC6Rqf53uWIemcyuoBm5b5orxpVzVcJjY5TRxYUSKn4FQpNSIirLzYrkuEDiy09-lQ6YbxWunC9AF9JRHSQRzic9VN86isngF8SHjK1d5IXMi2HWCB8LNSdy0fyqIBAcIOfcqWL2O3akeEkuinJxWUPClAdcH1_TstolJjRnnEicpmure6ajlVtLUU-l4BSiPOpoFVNoBbx65vN3Oin0ua"/>
+<h3 class="font-label-md text-label-md text-on-surface">Elena R.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">UI/UX Designer</p>
+<button class="w-full bg-primary-container/10 text-primary font-label-md text-label-md py-2 rounded-lg hover:bg-primary transition-colors hover:text-on-primary">Conectar</button>
+</div>
+<div class="min-w-[200px] flex-shrink-0 bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center shadow-[0px_1px_3px_rgba(0,0,0,0.05)] snap-start hover:-translate-y-1 transition-transform duration-300">
+<img class="w-20 h-20 rounded-full object-cover mb-sm" data-alt="A professional headshot of a male front-end developer working in a minimalist office. Natural lighting, crisp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_8BpRX_bdOlJMeuUMQZRT8KH-NUA56uZqwa6ghLzZuQWw6EKcvtnEYsztYyKcEaL9OreC2SCfous-IB291xP-XylICJbms76M4iVrkq_-FEEOaJpxKGqSOR_vIIbx5UAtDrq4h5Zm-SCgH306AuJ3cacj6eCIZ5sR_OzICYf3TmV4sgkjcgETTN06VXsgoxP1bgAfrE_3kzwneQDY6Zb2B_g9oAjYrObHWNYiH46ZLtrggDdgt-qf"/>
+<h3 class="font-label-md text-label-md text-on-surface">Carlos M.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Frontend Dev</p>
+<button class="w-full bg-primary-container/10 text-primary font-label-md text-label-md py-2 rounded-lg hover:bg-primary transition-colors hover:text-on-primary">Conectar</button>
+</div>
+<div class="min-w-[200px] flex-shrink-0 bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center shadow-[0px_1px_3px_rgba(0,0,0,0.05)] snap-start hover:-translate-y-1 transition-transform duration-300">
+<img class="w-20 h-20 rounded-full object-cover mb-sm" data-alt="A stylized avatar of a digital artist. Abstract minimalist background, sophisticated color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4x0F5Y9SvITOogJ2HQDFVReiN8J6MrybegRNR1zQOzP9HynK5BddavC8PzmhzglMuQ2G-TNZtC-A14rfWotZuw2tBg7rE6yJu9OZIrAeVU_Ezrnl8phAAuA1mLFqFrjRKLJh43oaEySGpdNJ7fy9WXIywEl6Ai3LH72Uzg0bhN6acNW0EAEmAeZP3I1pP-j3htW3x-qK5P20cb3PmoYZGeaddcknL4uI29spOGU7Le7HMBUSP2WIF"/>
+<h3 class="font-label-md text-label-md text-on-surface">Ana P.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Product Manager</p>
+<button class="w-full bg-primary-container/10 text-primary font-label-md text-label-md py-2 rounded-lg hover:bg-primary transition-colors hover:text-on-primary">Conectar</button>
+</div>
+<div class="min-w-[200px] flex-shrink-0 bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center shadow-[0px_1px_3px_rgba(0,0,0,0.05)] snap-start hover:-translate-y-1 transition-transform duration-300">
+<div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-sm text-on-surface-variant"><span class="material-symbols-outlined text-3xl">more_horiz</span></div>
+<h3 class="font-label-md text-label-md text-on-surface mt-2">Ver más</h3>
+</div>
+</div>
+</section>
+<!-- Publicaciones populares -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Publicaciones populares</h2>
+<div class="masonry-grid">
+<!-- Post 1 -->
+<div class="masonry-item bg-surface rounded-xl overflow-hidden border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<img class="w-full h-auto object-cover" data-alt="A clean, minimalist UI dashboard design mockup displayed on an angled screen. High-key lighting, soft shadows, pristine white surfaces with primary color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASU-HM_C9hNB-WQ-sP8uQwaf_4dhUWSaeHY8OD71qhdk1KzygG35SvB3ICyzpBoE-1iQ5P7dUpH7uoYvs-uigYP7sVquZJG3S9Npe1aW9KI8ez3VlroSx5OyFan2thH1V7doE04NTMspYriqoT1LjO7P00SapKtueFxWf2NQBgSh_uXIp7AGcLh9-RgKMFDzzXdkg1CGlyyc1VtuMucmgtXOuZraNd9hMQf8I1dkbnarqpE5uPFU-C"/>
+<div class="p-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Dashboard Redesign</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm">Explorando nuevas formas de visualizar datos complejos con una estética limpia.</p>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span class="font-label-sm text-label-sm">2.4k</span>
+</div>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="masonry-item bg-surface rounded-xl overflow-hidden border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<div class="p-6 bg-surface-container-low">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">"El buen diseño es obvio. El gran diseño es transparente."</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">— Joe Sparano</p>
+</div>
+<div class="p-4 border-t border-outline-variant">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">comment</span>
+<span class="font-label-sm text-label-sm">128</span>
+</div>
+</div>
+</div>
+<!-- Post 3 -->
+<div class="masonry-item bg-surface rounded-xl overflow-hidden border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<img class="w-full h-auto object-cover" data-alt="Abstract geometric shapes floating in a clean, off-white space. Subtle gradients in blues and purples. Sophisticated modern digital art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG3OcslCmFyEUa10-hwYGH77BhH35XZWltp9U6G3it1-p_uYOR_3pXiwyXi-676NDQQgNdlnV41SqZxzXk93D2bbeDcgWI2exAMh4XdTZs-nW9Z4zYUKWrZwNXYVShbk6e4V26GDx6V-U5ayvh3k8TPD1ujNuB4i_859tCdgp9sdQXbBBz1GxoCh4v7_FYPel0HM0tFuZDySjbbSKvD8AYkeZqsI0LYfXsRSddGtB6ojjMCjob07NY"/>
+<div class="p-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Design System Update</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nuevos tokens de color añadidos a la librería principal.</p>
+</div>
+</div>
+<!-- Post 4 -->
+<div class="masonry-item bg-surface rounded-xl overflow-hidden border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<img class="w-full h-auto object-cover" data-alt="A minimalist workspace setup featuring a sleek laptop, a small potted plant, and a neat notebook on a light wooden desk. Top-down view, soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAj09COzCXs1F3bzj2Sgm9-Ebr8vFrjhSjbh8ng4zs3T_rBxOoFUxpDMlDVl471fTiLB55mQQ-3bglzScRRg3oZnC7ELkVCeG3lzed0DSFSusYRtZLSrPqAx_1JD1oCOFfAnBPkGSnpZQUhvos-1wbrrlEh-iYp7Ua9aFoqkLaSeW-LvoE7BhPiY8QK8zdXxCVYElYgnRuabCdpIAUPhl4r0p72HkG-7aYx6UUfzetv6vsvCMK_1El"/>
+<div class="p-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Setup Minimalista</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span class="font-label-sm text-label-sm">5.1k</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface shadow-[0px_-1px_3px_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 h-12" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-110 transition-transform duration-200 w-16 h-12" href="#">
+<span class="material-symbols-outlined" data-icon="explore" data-weight="fill">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 h-12" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 h-12" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 h-12" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

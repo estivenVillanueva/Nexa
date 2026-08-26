@@ -1,0 +1,330 @@
+.explore-page {
+  min-height: 100dvh;
+  background: var(--background);
+  color: var(--on-background);
+  padding-bottom: 96px;
+}
+
+.explore-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.explore-topbar span {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.explore-topbar button {
+  padding: 8px;
+  color: var(--on-surface-variant);
+  border-radius: 9999px;
+  display: flex;
+}
+
+.explore-topbar button:hover {
+  background: var(--surface-low);
+}
+
+.explore-main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.explore-search {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto 32px;
+}
+
+.explore-search__icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--outline);
+  pointer-events: none;
+}
+
+.explore-search input {
+  width: 100%;
+  background: var(--surface-low);
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface);
+  font-size: 18px;
+  line-height: 28px;
+  border-radius: 9999px;
+  padding: 16px 16px 16px 48px;
+  outline: none;
+  box-shadow: var(--shadow-1);
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.explore-search input::placeholder {
+  color: var(--outline);
+}
+
+.explore-search input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(53, 37, 205, 0.2);
+}
+
+.explore-section {
+  margin-bottom: 48px;
+}
+
+.explore-section h2 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: var(--on-surface);
+}
+
+.explore-trends {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.explore-trends button {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--surface-high);
+  color: var(--on-surface-variant);
+  transition: background 0.15s, color 0.15s;
+}
+
+.explore-trends button:hover {
+  background: var(--surface-container);
+}
+
+.explore-trends button.is-active {
+  background: color-mix(in srgb, var(--primary-container) 10%, transparent);
+  color: var(--primary);
+}
+
+.explore-trends button.is-active:hover {
+  background: color-mix(in srgb, var(--primary-container) 20%, transparent);
+}
+
+.explore-people {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+}
+
+.explore-person {
+  min-width: 200px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-1);
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+
+.explore-person:hover {
+  transform: translateY(-4px);
+}
+
+.explore-person img {
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.explore-person h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--on-surface);
+}
+
+.explore-person p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--on-surface-variant);
+}
+
+.explore-person > button {
+  width: 100%;
+  background: color-mix(in srgb, var(--primary-container) 10%, transparent);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.explore-person > button:hover,
+.explore-person > button.is-connected {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.explore-person--more {
+  justify-content: center;
+  cursor: pointer;
+  color: inherit;
+}
+
+.explore-person__more-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  background: var(--surface-high);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+  margin-bottom: 8px;
+}
+
+.explore-person--more h3 {
+  margin-top: 8px;
+}
+
+.explore-masonry {
+  column-count: 1;
+  column-gap: 24px;
+}
+
+.explore-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--outline-variant);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow 0.3s;
+}
+
+.explore-card:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.explore-card > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.explore-card__body {
+  padding: 16px;
+}
+
+.explore-card__body h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--on-surface);
+}
+
+.explore-card__body p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--on-surface-variant);
+}
+
+.explore-card__quote {
+  padding: 24px;
+  background: var(--surface-low);
+}
+
+.explore-card__quote h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--on-surface);
+}
+
+.explore-card__quote p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--on-surface-variant);
+}
+
+.explore-card__stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  color: var(--on-surface-variant);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.explore-card__body .explore-card__stat {
+  padding: 0;
+}
+
+.explore-card__quote + .explore-card__stat {
+  border-top: 1px solid var(--outline-variant);
+}
+
+@media (min-width: 768px) {
+  .explore-page {
+    padding-left: 16rem;
+    padding-bottom: 32px;
+  }
+
+  .explore-topbar {
+    display: none;
+  }
+
+  .explore-main {
+    padding: 48px 24px 32px;
+  }
+
+  .explore-masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .explore-page {
+    padding-left: 18rem;
+  }
+
+  .explore-masonry {
+    column-count: 3;
+  }
+}

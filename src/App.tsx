@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { CreatePostPage } from './pages/CreatePostPage'
+import { ExplorePage } from './pages/ExplorePage'
 import { FeedPage } from './pages/FeedPage'
 import { LoginPage } from './pages/LoginPage'
 import { PlaceholderPage } from './pages/PlaceholderPage'
@@ -15,7 +16,7 @@ export default function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/feed" element={<FeedPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/explore" element={<PlaceholderPage title="Explorar" />} />
+        <Route path="/explore" element={<ExplorePage />} />
         <Route path="/create" element={<CreatePostPage />} />
         <Route path="/inbox" element={<PlaceholderPage title="Mensajes" />} />
         <Route

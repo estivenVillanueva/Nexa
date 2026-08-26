@@ -40,7 +40,8 @@
   color: var(--on-surface);
 }
 
-.profile-topbar button {
+.profile-topbar button,
+.profile-topbar__link {
   width: 40px;
   height: 40px;
   border-radius: 9999px;
@@ -50,7 +51,8 @@
   justify-content: center;
 }
 
-.profile-topbar button:hover {
+.profile-topbar button:hover,
+.profile-topbar__link:hover {
   background: var(--surface-low);
 }
 

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { BottomNav } from '../components/BottomNav'
 import { Icon } from '../components/Icon'
 import { SideNav } from '../components/SideNav'
@@ -48,9 +49,9 @@ export function NotificationsPage() {
           <Icon name="search" size={24} />
         </button>
         <span>Nexa</span>
-        <button type="button" aria-label="Ajustes">
+        <Link to="/settings" aria-label="Ajustes">
           <Icon name="settings" size={24} />
-        </button>
+        </Link>
       </header>
 
       <main className="notifications-main">

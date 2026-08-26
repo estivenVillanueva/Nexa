@@ -12,6 +12,7 @@ const NAV = [
   { to: '/inbox', label: 'Messages', icon: 'mail' },
   { to: '/create', label: 'Create', icon: 'add_box' },
   { to: '/profile', label: 'Profile', icon: 'person' },
+  { to: '/settings', label: 'Settings', icon: 'settings' },
 ]
 
 export function SideNav() {

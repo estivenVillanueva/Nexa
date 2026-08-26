@@ -26,14 +26,16 @@
   color: var(--primary);
 }
 
-.followers-topbar button {
+.followers-topbar button,
+.followers-topbar a {
   padding: 8px;
   color: var(--primary);
   border-radius: 9999px;
   display: flex;
 }
 
-.followers-topbar button:hover {
+.followers-topbar button:hover,
+.followers-topbar a:hover {
   background: var(--surface-low);
 }
 

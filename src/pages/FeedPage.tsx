@@ -16,9 +16,9 @@ export function FeedPage() {
           <Icon name="search" size={24} />
         </button>
         <h1>Nexa</h1>
-        <button type="button" aria-label="Ajustes">
+        <Link to="/settings" aria-label="Ajustes" className="feed-topbar__link">
           <Icon name="settings" size={24} />
-        </button>
+        </Link>
       </header>
 
       <main className="feed-main">

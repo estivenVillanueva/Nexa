@@ -22,9 +22,9 @@ export function ProfilePage() {
           </button>
           <span className="profile-topbar__mobile">Nexa</span>
           <span className="profile-topbar__desktop">Profile</span>
-          <button type="button" aria-label="Ajustes">
+          <Link to="/settings" aria-label="Ajustes" className="profile-topbar__link">
             <Icon name="settings" size={24} />
-          </button>
+          </Link>
         </header>
 
         <main className="profile-main">

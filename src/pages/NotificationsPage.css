@@ -25,14 +25,16 @@
   color: var(--primary);
 }
 
-.notifications-topbar button {
+.notifications-topbar button,
+.notifications-topbar a {
   padding: 8px;
   color: var(--on-surface-variant);
   border-radius: 9999px;
   display: flex;
 }
 
-.notifications-topbar button:hover {
+.notifications-topbar button:hover,
+.notifications-topbar a:hover {
   background: var(--surface-low);
 }
 

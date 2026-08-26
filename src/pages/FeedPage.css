@@ -30,7 +30,8 @@
   color: var(--primary);
 }
 
-.feed-topbar button {
+.feed-topbar button,
+.feed-topbar__link {
   width: 40px;
   height: 40px;
   border-radius: 9999px;
@@ -40,7 +41,8 @@
   justify-content: center;
 }
 
-.feed-topbar button:hover {
+.feed-topbar button:hover,
+.feed-topbar__link:hover {
   background: var(--surface-low);
 }
 

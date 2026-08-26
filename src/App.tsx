@@ -3,6 +3,7 @@ import { CreatePostPage } from './pages/CreatePostPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { FeedPage } from './pages/FeedPage'
 import { LoginPage } from './pages/LoginPage'
+import { NotificationsPage } from './pages/NotificationsPage'
 import { PlaceholderPage } from './pages/PlaceholderPage'
 import { ProfilePage } from './pages/ProfilePage'
 import { RegisterPage } from './pages/RegisterPage'
@@ -18,14 +19,11 @@ export default function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/create" element={<CreatePostPage />} />
+        <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/inbox" element={<PlaceholderPage title="Mensajes" />} />
         <Route
           path="/followers"
           element={<PlaceholderPage title="Seguidores y Siguiendo" />}
-        />
-        <Route
-          path="/notifications"
-          element={<PlaceholderPage title="Notificaciones" />}
         />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
